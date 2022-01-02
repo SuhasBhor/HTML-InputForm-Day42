@@ -5,11 +5,22 @@ text.addEventListener('input' , function(){
     let nameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$')
     if(nameRegex.test(text.value)){
         textError.textContent = " ";
-    }else{
+    }else{ 
         textError.textContent = "Name Is Invalid";
     }
 });
 
+//Email Validation
+const email = document.querySelector('#email');
+const emailError = document.querySelector('.email-error');
+email.addEventListener('input',function(){
+    let emailRegex = RegExp('^[A-Za-z0-9]+(.[A-Za-z0-9]+)*@[^_\\W]+(.[^_\\W]+)?(?=(.[^_\\W]{3,}$|.[a-zA-Z]{2}$)).*$')
+    if(emailRegex.test(email.value)){
+        emailError.textContent = " ";
+    }else{
+        emailError.textContent = "Email is Invalid";
+    }
+});
 //Salary
 const salary = document.querySelector('#salary');
 const salaryOuput = document.querySelector('.salary-output');
