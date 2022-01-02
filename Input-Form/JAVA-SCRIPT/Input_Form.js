@@ -35,10 +35,13 @@ number.addEventListener('input',function(){
 });
 
 //Password Validation - Minimum 8 Characters
+//Should have at least 1 Upper Case
+//should Have at least 1 Numeric number in pasword
+//has exactly 1 special character
 const password = document.querySelector('#pwd');
 const passwordError = document.querySelector('.pwd-error');
 password.addEventListener('input',function(){
-    let pwdRegex = RegExp('[A-Za-z0-9]{8}')
+    let pwdRegex = RegExp('^(?=.*[A-Z])(?=.*[0-9])(?=[\w]*[\W][\w]*$)(?=.*[a-z]).{8,}$')
     if(pwdRegex.test(password.value)){
         passwordError.textContent = " ";
     }else{
