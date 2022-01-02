@@ -21,6 +21,20 @@ email.addEventListener('input',function(){
         emailError.textContent = "Email is Invalid";
     }
 });
+
+//Phone Number Validation
+const number = document.querySelector('#number');
+const numberError = document.querySelector('.number-error');
+number.addEventListener('input',function(){
+    let numberRegex = RegExp('^[0-9]{2}[\s]{1}[0-9]{10}')
+    if(numberRegex.test(number.value)){
+        numberError.textContent = " ";
+    }else{
+        numberError.textContent = "Number is Invalid";
+    }
+});
+
+
 //Salary
 const salary = document.querySelector('#salary');
 const salaryOuput = document.querySelector('.salary-output');
