@@ -34,6 +34,17 @@ number.addEventListener('input',function(){
     }
 });
 
+//Password Validation - Minimum 8 Characters
+const password = document.querySelector('#pwd');
+const passwordError = document.querySelector('.pwd-error');
+password.addEventListener('input',function(){
+    let pwdRegex = RegExp('[A-Za-z0-9]{8}')
+    if(pwdRegex.test(password.value)){
+        passwordError.textContent = " ";
+    }else{
+        passwordError.textContent = "Password is Invalid";
+    }
+});
 
 //Salary
 const salary = document.querySelector('#salary');
